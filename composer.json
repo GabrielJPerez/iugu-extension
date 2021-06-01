@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "php": "~5.6|^7.0",
-        "bubbstore/iugu-php-sdk": "^1.0"
+        "egcservices/iugu-php-sdk": "^2.0"
     },
     "license": "MIT",
     "autoload": {
