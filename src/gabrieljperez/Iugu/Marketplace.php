@@ -56,7 +56,7 @@ class Marketplace extends BaseRequest
      */
     public function update($id, array $params)
     {
-        $this->setParams($params)->sendApiRequest('PUT', sprintf('accounts/$s', $id));
+        $this->setParams($params)->sendApiRequest('PUT', "accounts/{$id}");
 
         return $this->fetchResponse();
     }
@@ -70,7 +70,7 @@ class Marketplace extends BaseRequest
      */
     public function requestVerification($id, array $params)
     {
-        $this->setParams($params)->sendApiRequest('POST', sprintf('accounts/%s/request_verification', $id));
+        $this->setParams($params)->sendApiRequest('POST', "accounts/{$id}/request_verification");
 
         return $this->fetchResponse();
     }
@@ -85,7 +85,7 @@ class Marketplace extends BaseRequest
      */
     public function show($id)
     {
-        $this->sendApiRequest('GET', sprintf('accounts/%s', $id));
+        $this->sendApiRequest('GET', "accounts/{$id}");
 
         return $this->fetchResponse();
     }
@@ -101,7 +101,7 @@ class Marketplace extends BaseRequest
      */
     public function requestWithdraw($id, array $params)
     {
-        $this->sendApiRequest('POST', sprintf('accounts/%s/request_withdraw', $id));
+        $this->sendApiRequest('POST', "accounts/{$id}/request_withdraw");
 
         return $this->fetchResponse();
     }

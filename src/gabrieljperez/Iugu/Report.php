@@ -79,7 +79,7 @@ class Report extends BaseRequest
      */
     public function withdrawConciliations($start, $limit)
     {
-        $this->sendApiRequest('GET', sprintf('withdraw_conciliations?start=$s&limit=$s', $start, $limit));
+        $this->sendApiRequest('GET', "withdraw_conciliations?start={$start}&limit={$limit}");
 
         return $this->fetchResponse();
     }
@@ -104,7 +104,7 @@ class Report extends BaseRequest
      */
     public function searchPayment($id)
     {
-        $this->sendApiRequest('GET', sprintf('payment_requests/$s', $id));
+        $this->sendApiRequest('GET', "payment_requests/{$id}");
 
         return $this->fetchResponse();
     }

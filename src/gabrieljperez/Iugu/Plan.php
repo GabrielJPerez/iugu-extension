@@ -61,7 +61,7 @@ class Plan extends BaseRequest
      */
     public function update($id, array $params)
     {
-        $this->setParams($params)->sendApiRequest('PUT', sprintf('plans/$s', $id));
+        $this->setParams($params)->sendApiRequest('PUT', "plans/{$id}");
 
         return $this->fetchResponse();
     }
@@ -74,7 +74,7 @@ class Plan extends BaseRequest
      */
     public function get($id)
     {
-        $this->sendApiRequest('GET', sprintf('plans/$s', $id));
+        $this->sendApiRequest('GET', "plans/{$id}");
 
         return $this->fetchResponse();
     }
@@ -87,7 +87,7 @@ class Plan extends BaseRequest
      */
     public function getByIdentifier($identifier)
     {
-        $this->sendApiRequest('GET', sprintf('plans/identifier/$s', $identifier));
+        $this->sendApiRequest('GET', "plans/identifier/{$identifier}");
 
         return $this->fetchResponse();
     }
@@ -100,7 +100,7 @@ class Plan extends BaseRequest
      */
     public function destroy($id)
     {
-        $this->sendApiRequest('DELETE', sprintf('plans/$s', $id));
+        $this->sendApiRequest('DELETE', "plans/{$id}");
 
         return $this->fetchResponse();
     }

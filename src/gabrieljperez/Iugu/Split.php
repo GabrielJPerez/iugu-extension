@@ -51,7 +51,7 @@ class Split extends BaseRequest
      */
     public function search($id)
     {
-        $this->sendApiRequest('GET', sprintf('splits/$s', $id));
+        $this->sendApiRequest('GET', "splits/{$id}");
 
         return $this->fetchResponse();
     }
