@@ -34,4 +34,31 @@ class Customer extends BaseCustomer
 
         return $this->fetchResponse();
     }
+
+    /**
+     * Retorna os dados de uma Forma de Pagamento de um Cliente.
+     *
+     * @param  string $customer_id
+     * @param  string $payment_method_id
+     * @return void
+     */
+    public function searchPaymentMethod($customer_id, $payment_method_id)
+    {
+        $this->sendApiRequest('GET', "customers/{$customer_id}/payment_methods/{$payment_method_id}");
+
+        return $this->fetchResponse();
+    }
+
+    /**
+     * Retorna uma lista com todas as formas de pagamento de determinado Cliente.
+     *
+     * @param  string $customer_id
+     * @return void
+     */
+    public function listPaymentMethods($customer_id)
+    {
+        $this->sendApiRequest('GET', "customers/{$customer_id}/payment_methods");
+
+        return $this->fetchResponse();
+    }
 }
